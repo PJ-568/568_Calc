@@ -1,0 +1,294 @@
+[gd_scene load_steps=7 format=3 uid="uid://g4du8c33vab5"]
+
+[ext_resource type="FontFile" uid="uid://c3lj58l2mmrld" path="res://Font/SmileySans-Oblique.ttf" id="1_g8qlb"]
+[ext_resource type="Script" path="res://Scripts/主界面.gd" id="1_y82yl"]
+[ext_resource type="StyleBox" uid="uid://dyccpjybwwek3" path="res://Assets/样式/正常功能.tres" id="2_asaep"]
+[ext_resource type="StyleBox" uid="uid://dgcskobwmhc74" path="res://Assets/样式/正常等于.tres" id="2_xhj82"]
+[ext_resource type="StyleBox" uid="uid://diyafdj4q00tg" path="res://Assets/样式/正常数字.tres" id="3_7cxsl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2bxdx"]
+
+[node name="主界面" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_y82yl")
+
+[node name="面板" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="背景色" type="ColorRect" parent="面板"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.129412, 0.129412, 1)
+
+[node name="屏键容器" type="VBoxContainer" parent="面板/背景色"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="结果显示容器" type="VBoxContainer" parent="面板/背景色/屏键容器"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="面板/背景色/屏键容器/结果显示容器"]
+layout_mode = 2
+theme_override_constants/margin_top = 96
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="面板/背景色/屏键容器/结果显示容器/MarginContainer"]
+layout_mode = 2
+
+[node name="上个工作区" type="Label" parent="面板/背景色/屏键容器/结果显示容器/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0.666667, 0.643137, 1)
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 48
+text = "6*8"
+horizontal_alignment = 2
+
+[node name="工作区" type="Label" parent="面板/背景色/屏键容器/结果显示容器/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.933333, 0.933333, 0.933333, 1)
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 128
+text = "48
+"
+horizontal_alignment = 2
+
+[node name="上下键盘分隔" type="VBoxContainer" parent="面板/背景色/屏键容器"]
+layout_mode = 2
+
+[node name="上键盘" type="GridContainer" parent="面板/背景色/屏键容器/上下键盘分隔"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 4
+
+[node name="Clear" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("2_asaep")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "C"
+
+[node name="Or" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("2_asaep")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "-\\+"
+
+[node name="Back" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("2_asaep")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "←"
+
+[node name="÷" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("2_asaep")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "/"
+
+[node name="7" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_7cxsl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "7"
+
+[node name="8" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_7cxsl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "8"
+
+[node name="9" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_7cxsl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "9"
+
+[node name="*" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("2_asaep")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "*"
+
+[node name="4" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_7cxsl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "4"
+
+[node name="5" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_7cxsl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "5"
+
+[node name="6" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_7cxsl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "6"
+
+[node name="-" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("2_asaep")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "-"
+
+[node name="1" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_7cxsl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "1"
+
+[node name="2" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_7cxsl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "2"
+
+[node name="3" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_7cxsl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "3"
+
+[node name="+" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/上键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("2_asaep")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "+"
+
+[node name="下键盘" type="HBoxContainer" parent="面板/背景色/屏键容器/上下键盘分隔"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="0" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/下键盘"]
+custom_minimum_size = Vector2(355, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_7cxsl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "0"
+
+[node name="_" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/下键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_7cxsl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "."
+
+[node name="=" type="Button" parent="面板/背景色/屏键容器/上下键盘分隔/下键盘"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("1_g8qlb")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("2_xhj82")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
+text = "="
