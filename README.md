@@ -2,7 +2,7 @@
     <img width="256" src='Assets/icon.svg'/>
 </p>
 
-> 🌏简体中文 | [English](./README_EN.md)
+> 🌏简体中文 | [繁體中文](https://Calc.PJ568.eu.org/?language=chinese_traditional) | [日本語](https://Calc.PJ568.eu.org/?language=japanese) | [한어](https://Calc.PJ568.eu.org/?language=korean) | [English](https://Calc.PJ568.eu.org/?language=english) | [Español](https://Calc.PJ568.eu.org/?language=spanish)
 
 > 🗃️[Github](https://github.com/PJ-568/568_Calc) | [Gitee](https://gitee.com/PJ-568/568_Calc)
 
