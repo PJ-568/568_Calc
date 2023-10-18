@@ -45,7 +45,13 @@
 
 ## ⭐Star 历史
 
-![Star History Chart](https://api.star-history.com/svg?repos=PJ-568/568_Calc&type=Date)
+<a href="https://star-history.com/#PJ-568/568_Calc&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=PJ-568/568_Calc&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=PJ-568/568_Calc&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=PJ-568/568_Calc&type=Date" />
+  </picture>
+</a>
 
 ## 📄许可证
 
