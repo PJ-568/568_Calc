@@ -81,6 +81,17 @@ vertical_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2"]
 layout_mode = 2
 
+[node name="网页" type="LinkButton" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2/HBoxContainer"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_8vcuf")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cx36f")
+text = "访问官网"
+uri = "https://Calc.PJ568.eu.org"
+
 [node name="访问" type="LinkButton" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2/HBoxContainer"]
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
@@ -92,7 +103,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_cx36f")
 text = "访问源代码仓库"
 uri = "https://github.com/PJ-568/568_Calc"
 
-[node name="MIT" type="LinkButton" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2/HBoxContainer"]
+[node name="MIT" type="LinkButton" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2"]
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -154,7 +165,7 @@ uri = "https://github.com/atelier-anchor/smiley-sans"
 custom_minimum_size = Vector2(175, 64)
 layout_mode = 2
 size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = ExtResource("2_qbs1x")
