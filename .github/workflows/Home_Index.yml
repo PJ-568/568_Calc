@@ -14,7 +14,7 @@ jobs:
       pull-requests: write  # To create a PR from that branch
     steps:
       # Check
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: home
           submodules: recursive
@@ -27,7 +27,7 @@ jobs:
           ls /home/runner/temp/
 
       # Run merge home and gh-pages
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: gh-pages
       - run: |
@@ -78,7 +78,7 @@ jobs:
 
       - name: Generate the sitemap
         id: sitemap
-        uses: cicirello/generate-sitemap@v1
+        uses: cicirello/generate-sitemap@v1.9.2
         with:
           base-url-path: https://Calc.pj568.eu.org/
 
