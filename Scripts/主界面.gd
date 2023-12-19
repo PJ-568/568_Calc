@@ -5,11 +5,13 @@ extends Control
 @onready var 工作区 = $"面板/背景色/屏键容器/结果显示容器/MarginContainer/VBoxContainer/工作区"
 @onready var 所有按钮 = $"面板/背景色/屏键容器/MarginContainer2/上下键盘分隔"
 
-var 已被使用 := false	##工作区内是否有数字
+var 已被使用 := false	## 工作区内是否有数字
 var 第一个数字 : float
 var 第二个数字 : float
 var 运算符 := ""
-var 小数否 := false	##工作区内是否为小数（防止两个小数点出现）
+var 小数否 := false	## 工作区内是否为小数（防止两个小数点出现）
+var 已键入运算符 := false
+var 已键入第二数 := false	## 若为是，则按下运算符按键将触发一次运算
 
 # 初始化
 func _ready():
@@ -19,6 +21,7 @@ func _ready():
 				btn.pressed.connect(Callable(self, "_number_buttons").bind(btn))
 
 
+@warning_ignore("unused_parameter")
 func _unhandled_input(event) -> void:
 	if Input.is_action_pressed("ui_text_backspace") or Input.is_action_pressed("ui_cancel"):
 		按下退格()
@@ -65,6 +68,8 @@ func _unhandled_input(event) -> void:
 func 按下数字按钮(键):
 	if not 已被使用:
 		工作区.text = 键
+		if 已键入运算符:
+			已键入第二数 = true
 		已被使用 = true
 	else:
 		工作区.text += 键
@@ -73,14 +78,17 @@ func 按下数字按钮(键):
 func _number_buttons(btn):
 	if not 已被使用:
 		工作区.text = btn.name
+		if 已键入运算符:
+			已键入第二数 = true
 		已被使用 = true
 	else:
 		工作区.text += btn.name
 
 
-
 func _on_clear_pressed():
 	已被使用 = false
+	已键入运算符 = false
+	已键入第二数 = false
 	历史.text = ""
 	工作区.text = "0"
 	小数否 = false
@@ -105,38 +113,51 @@ func 按下退格():
 		else:
 			工作区.text = "0"
 			已被使用 = false
+			已键入第二数 = false
 
 
 func 按下除():
-	已被使用 = false
+	if 已键入第二数:
+		第二数等于()
 	第一个数字 = 工作区.text.to_float()
 	运算符 = "/"
 	历史.text = str(第一个数字) + 运算符
+	已被使用 = false
 	小数否 = false
+	已键入运算符 = true
 
 
 func 按下乘():
-	已被使用 = false
+	if 已键入第二数:
+		第二数等于()
 	第一个数字 = 工作区.text.to_float()
 	运算符 = "*"
 	历史.text = str(第一个数字) + 运算符
+	已被使用 = false
 	小数否 = false
+	已键入运算符 = true
 
 
 func 按下减():
-	已被使用 = false
+	if 已键入第二数:
+		第二数等于()
 	第一个数字 = 工作区.text.to_float()
 	运算符 = "-"
 	历史.text = str(第一个数字) + 运算符
+	已被使用 = false
 	小数否 = false
+	已键入运算符 = true
 
 
 func 按下加():
-	已被使用 = false
+	if 已键入第二数:
+		第二数等于()
 	第一个数字 = 工作区.text.to_float()
 	运算符 = "+"
 	历史.text = str(第一个数字) + 运算符
+	已被使用 = false
 	小数否 = false
+	已键入运算符 = true
 
 
 func 按下点():
@@ -163,9 +184,14 @@ func 等于():
 			结果 = 第一个数字 * 第二个数字
 		"/":
 			结果 = 第一个数字 / 第二个数字
-	历史.text = str(第一个数字) + 运算符 + str(第二个数字)
+	历史.text = str(第一个数字) + 运算符 + str(第二个数字) + "="
 	工作区.text = str(snappedf(结果, 0.0000000001))
 
 
+func 第二数等于():
+	等于()
+	历史.text = 工作区.text
+
+
 func _on_关于_pressed():
-	get_tree ().change_scene_to_file("res://关于.tscn")
+	get_tree().change_scene_to_file("res://关于.tscn")
