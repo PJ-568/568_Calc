@@ -118,7 +118,8 @@ func 按下退格():
 
 func 按下除():
 	if 已键入第二数:
-		第二数等于()
+		等于()
+		历史.text = 工作区.text
 	第一个数字 = 工作区.text.to_float()
 	运算符 = "/"
 	历史.text = str(第一个数字) + 运算符
@@ -129,7 +130,8 @@ func 按下除():
 
 func 按下乘():
 	if 已键入第二数:
-		第二数等于()
+		等于()
+		历史.text = 工作区.text
 	第一个数字 = 工作区.text.to_float()
 	运算符 = "*"
 	历史.text = str(第一个数字) + 运算符
@@ -140,7 +142,8 @@ func 按下乘():
 
 func 按下减():
 	if 已键入第二数:
-		第二数等于()
+		等于()
+		历史.text = 工作区.text
 	第一个数字 = 工作区.text.to_float()
 	运算符 = "-"
 	历史.text = str(第一个数字) + 运算符
@@ -151,7 +154,8 @@ func 按下减():
 
 func 按下加():
 	if 已键入第二数:
-		第二数等于()
+		等于()
+		历史.text = 工作区.text
 	第一个数字 = 工作区.text.to_float()
 	运算符 = "+"
 	历史.text = str(第一个数字) + 运算符
@@ -174,7 +178,10 @@ func 按下点():
 func 等于():
 	已被使用 = false
 	var 结果 : float
-	第二个数字 = 工作区.text.to_float()
+	if 历史.text.right(1) == "=":
+		第一个数字 = 工作区.text.to_float()
+	else:
+		第二个数字 = 工作区.text.to_float()
 	match 运算符:
 		"+":
 			结果 = 第一个数字 + 第二个数字
@@ -187,11 +194,7 @@ func 等于():
 	历史.text = str(第一个数字) + 运算符 + str(第二个数字) + "="
 	工作区.text = str(snappedf(结果, 0.0000000001))
 	已键入第二数 = false
-
-
-func 第二数等于():
-	等于()
-	历史.text = 工作区.text
+	已键入运算符 = false
 
 
 func _on_关于_pressed():
