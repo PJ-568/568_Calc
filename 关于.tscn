@@ -57,7 +57,7 @@ offset_bottom = 1157.0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 96
-text = "关于"
+text = "KEY_ABOUT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -65,23 +65,23 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="标题" type="Label" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2"]
+custom_minimum_size = Vector2(656, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 64
-text = "许可："
+text = "KEY_LICENSE"
 vertical_alignment = 1
+text_overrun_behavior = 2
 
 [node name="正文" type="Label" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2"]
+custom_minimum_size = Vector2(656, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 48
-text = "568_Calc 项目遵循 MIT 协议。"
+text = "KEY_LICENSEDUNDER"
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2"]
-layout_mode = 2
-
-[node name="网页" type="LinkButton" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2/HBoxContainer"]
+[node name="网页" type="LinkButton" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2"]
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -89,10 +89,10 @@ size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cx36f")
-text = "访问官网"
+text = "KEY_WEBSITE"
 uri = "https://Calc.PJ568.eu.org"
 
-[node name="访问" type="LinkButton" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2/HBoxContainer"]
+[node name="访问" type="LinkButton" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2"]
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -100,7 +100,7 @@ size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cx36f")
-text = "访问源代码仓库"
+text = "KEY_SOURCE"
 uri = "https://github.com/PJ-568/568_Calc"
 
 [node name="MIT" type="LinkButton" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2"]
@@ -111,18 +111,20 @@ size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cx36f")
-text = "关于 MIT 协议"
+text = "KEY_ABOUTMIT"
 uri = "https://mit-license.org/"
 
 [node name="正文和按钮分隔" type="VBoxContainer" parent="面板/背景色/MarginContainer/色/内容按钮分隔"]
 layout_mode = 2
 
 [node name="标题" type="Label" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和按钮分隔"]
+custom_minimum_size = Vector2(656, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 64
-text = "开放源代码库："
+text = "KEY_OTHERLICENSE"
 vertical_alignment = 1
+text_overrun_behavior = 2
 
 [node name="按钮" type="GridContainer" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和按钮分隔"]
 layout_mode = 2
@@ -165,7 +167,7 @@ uri = "https://github.com/atelier-anchor/smiley-sans"
 custom_minimum_size = Vector2(175, 64)
 layout_mode = 2
 size_flags_horizontal = 6
-size_flags_vertical = 4
+size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = ExtResource("2_qbs1x")

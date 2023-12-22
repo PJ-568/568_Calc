@@ -57,7 +57,7 @@ func _unhandled_input(event) -> void:
 		按下乘()
 	if Input.is_action_pressed("除"):
 		按下除()
-	if Input.is_action_pressed("等于"):
+	if Input.is_action_pressed("等于") or Input.is_action_pressed("ui_accept"):
 		等于()
 	if Input.is_action_pressed("取反"):
 		按下正负()
@@ -192,10 +192,14 @@ func 等于():
 		"/":
 			结果 = 第一个数字 / 第二个数字
 	历史.text = str(第一个数字) + 运算符 + str(第二个数字) + "="
-	工作区.text = str(snappedf(结果, 0.0000000001))
+	工作区.text = str(snappedf(结果, 0.0000001))
 	已键入第二数 = false
 	已键入运算符 = false
 
 
 func _on_关于_pressed():
 	get_tree().change_scene_to_file("res://关于.tscn")
+
+
+func _on_设置_pressed():
+	get_tree().change_scene_to_file("res://设置.tscn")

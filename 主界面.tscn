@@ -352,3 +352,4 @@ expand_icon = true
 [connection signal="pressed" from="面板/背景色/屏键容器/MarginContainer2/上下键盘分隔/下键盘/_" to="." method="按下点"]
 [connection signal="pressed" from="面板/背景色/屏键容器/MarginContainer2/上下键盘分隔/下键盘/=" to="." method="等于"]
 [connection signal="pressed" from="面板/背景色/MarginContainer/顶按钮容器/关于" to="." method="_on_关于_pressed"]
+[connection signal="pressed" from="面板/背景色/MarginContainer/顶按钮容器/设置" to="." method="_on_设置_pressed"]
