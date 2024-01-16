@@ -19,6 +19,10 @@ boot_splash/image="res://Assets/568_Calc.png"
 boot_splash/fullsize=false
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+Global="*res://Scripts/全局.gd"
+
 [display]
 
 window/size/viewport_width=720

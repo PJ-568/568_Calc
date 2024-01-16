@@ -75,7 +75,6 @@ text_overrun_behavior = 2
 
 [node name="语言" type="OptionButton" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_fcls7")
 theme_override_font_sizes/font_size = 48
 item_count = 5
 popup/item_0/text = "简体中文"
