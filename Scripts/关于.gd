@@ -1,8 +1,11 @@
 extends Control
 
 
+#@onready var 本场景 = $"面板"
+
+
 #func _ready():
-	#TranslationServer.set_locale("es")
+	#本场景.set("theme", "res://Assets/样式/得意黑字体.tres")
 
 
 @warning_ignore("unused_parameter")

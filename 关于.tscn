@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b13pa4q4ep2mc"]
+[gd_scene load_steps=7 format=3 uid="uid://b13pa4q4ep2mc"]
 
-[ext_resource type="FontFile" uid="uid://c3lj58l2mmrld" path="res://Font/SmileySans-Oblique.ttf" id="1_8vcuf"]
 [ext_resource type="Script" path="res://Scripts/关于.gd" id="1_ib74w"]
+[ext_resource type="Theme" uid="uid://bnko5kkgxl0s0" path="res://Assets/样式/默认放大字.tres" id="1_kg2bk"]
 [ext_resource type="StyleBox" uid="uid://diyafdj4q00tg" path="res://Assets/样式/正常数字.tres" id="2_qbs1x"]
+[ext_resource type="Theme" uid="uid://dgo8n2bba7imi" path="res://Assets/样式/得意黑字体.tres" id="2_ssjte"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cx36f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f2tr4"]
 
 [node name="关于" type="Control"]
 layout_mode = 3
@@ -13,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_kg2bk")
 script = ExtResource("1_ib74w")
 
 [node name="面板" type="Panel" parent="."]
@@ -55,7 +59,6 @@ offset_bottom = 1157.0
 
 [node name="标题" type="Label" parent="面板/背景色/MarginContainer/色/内容按钮分隔"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 96
 text = "KEY_ABOUT"
 horizontal_alignment = 1
@@ -67,7 +70,6 @@ layout_mode = 2
 [node name="标题" type="Label" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2"]
 custom_minimum_size = Vector2(656, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 64
 text = "KEY_LICENSE"
 vertical_alignment = 1
@@ -76,17 +78,16 @@ text_overrun_behavior = 2
 [node name="正文" type="Label" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2"]
 custom_minimum_size = Vector2(656, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 48
 text = "KEY_LICENSEDUNDER"
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="网页" type="LinkButton" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2"]
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cx36f")
 text = "KEY_WEBSITE"
@@ -97,7 +98,6 @@ custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cx36f")
 text = "KEY_SOURCE"
@@ -108,9 +108,8 @@ custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = SubResource("StyleBoxEmpty_cx36f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f2tr4")
 text = "KEY_ABOUTMIT"
 uri = "https://mit-license.org/"
 
@@ -120,7 +119,6 @@ layout_mode = 2
 [node name="标题" type="Label" parent="面板/背景色/MarginContainer/色/内容按钮分隔/正文和按钮分隔"]
 custom_minimum_size = Vector2(656, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 64
 text = "KEY_OTHERLICENSE"
 vertical_alignment = 1
@@ -135,7 +133,6 @@ custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cx36f")
 text = "568_Calc"
@@ -146,7 +143,6 @@ custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cx36f")
 text = "Godot"
@@ -157,18 +153,22 @@ custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cx36f")
 text = "smiley-sans"
 uri = "https://github.com/atelier-anchor/smiley-sans"
+
+[node name="版本" type="Label" parent="面板/背景色/MarginContainer/色/内容按钮分隔"]
+layout_mode = 2
+theme = ExtResource("2_ssjte")
+text = "v0.0.0.3"
+horizontal_alignment = 1
 
 [node name="返回" type="Button" parent="面板/背景色/MarginContainer/色/内容按钮分隔"]
 custom_minimum_size = Vector2(175, 64)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("1_8vcuf")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = ExtResource("2_qbs1x")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cx36f")

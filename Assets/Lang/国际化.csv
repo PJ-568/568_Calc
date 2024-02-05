@@ -1,0 +1,11 @@
+id,zh,en,zht,jp,es
+KEY_ABOUT,关于,About,關於,約,Acerca de
+KEY_LICENSE,许可,License,許可証,ライセンス,Licencia
+KEY_LICENSEDUNDER,568_Calc 项目遵循 MIT 协议。,568_Calc is licensed under the MIT license.,568_Calc 由 MIT 授權。,568_Calc は MIT ライセンスで取得済みです。,568_Calc está licenciado bajo la licencia MIT.
+KEY_WEBSITE,访问官网,Website,瀏覽官方網站,Web サイト,Sitio web
+KEY_SOURCE,访问源代码仓库,Source,瀏覽原始碼儲存庫,ソースコードリポジトリ,Repositorio de código fuente
+KEY_ABOUTMIT,关于 MIT 协议,About the MIT license,關於 MIT 許可證,MIT ライセンスについて,Acerca de la licencia MIT
+KEY_OTHERLICENSE,开放源代码库,Open Source Library,開放源代碼庫,オープンソースライブラリ,Otros licencia
+KEY_LANGUANGE,语言,Language,語言,言語,Idioma
+KEY_SETTING,设置,Configuration,設置,設定,Configuración
+KEY_SYSLANG,自动检测,Auto,自動,自動,Automático

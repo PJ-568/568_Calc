@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cw2gquc52qt1o"
+
+[deps]
+
+files=["res://Assets/Lang/国际化.zh.translation", "res://Assets/Lang/国际化.en.translation", "res://Assets/Lang/国际化.zht.translation", "res://Assets/Lang/国际化.jp.translation", "res://Assets/Lang/国际化.es.translation"]
+
+source_file="res://Assets/Lang/国际化.csv"
+dest_files=["res://Assets/Lang/国际化.zh.translation", "res://Assets/Lang/国际化.en.translation", "res://Assets/Lang/国际化.zht.translation", "res://Assets/Lang/国际化.jp.translation", "res://Assets/Lang/国际化.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0

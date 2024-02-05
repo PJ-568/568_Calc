@@ -1,6 +1,7 @@
 extends Control
 
 
+#@onready var 本场景 = $"面板"
 @onready var 语言 = $"面板/背景色/MarginContainer/色/内容按钮分隔/正文和标题分隔2/语言"
 
 
@@ -11,7 +12,8 @@ func _unhandled_input(event) -> void:
 
 
 func _ready():
-	语言.selected = Global.读取设置并更改语言()
+	#本场景.set("theme", "res://Assets/样式/得意黑字体.tres")
+	语言.selected = Global.读取设置()
 
 
 func _on_返回_pressed():

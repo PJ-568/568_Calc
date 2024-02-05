@@ -1,17 +1,20 @@
 extends Node
 
 
-const CONFIG_PATH = "user://settings.cfg"
+const CONFIG_PATH := "user://settings.cfg"
+
+#var 应该使用字体 := false
 
 
 func _ready():
+	#根据语言切换主题(读取设置并更改语言())
 	读取设置并更改语言()
 	改变初始窗口大小()
 
 
 func 切换语言(index):
 	if index == 0:
-		根据系统语言切换语言()
+		return 根据系统语言切换语言()
 	elif index == 1:
 		TranslationServer.set_locale("zh")
 	elif index == 2:
@@ -29,49 +32,62 @@ func 切换语言(index):
 
 
 func 保存设置(index):
-	var file = ConfigFile.new()
+	var file := ConfigFile.new()
 	file.set_value("General", "Language", index)
-	var error = file.save(CONFIG_PATH)
+	var error := file.save(CONFIG_PATH)
 	if error != OK:
 		push_error("Failed to save config: %d" % error)
 
 
 func 切换并保存(index):
-	保存设置(切换语言(index))
+	return 保存设置(切换语言(index))
+
+
+func 读取设置():
+	var file := ConfigFile.new()
+	if FileAccess.file_exists(CONFIG_PATH):
+		var error := file.load(CONFIG_PATH)
+		if error == OK:
+			return file.get_value("General", "Language", 0)
+		else:
+			push_warning("Failed to load config: %d", error)
+	return 初始化语言设置()
 
 
 func 读取设置并更改语言():
-	var file = ConfigFile.new()
-	if FileAccess.file_exists(CONFIG_PATH):
-		var error = file.load(CONFIG_PATH)
-		if error == OK:
-			return 切换语言(file.get_value("General", "Language", 0))
-		else:
-			push_warning("Failed to load config: %d", error)
-			return 切换语言(0)
-	else:
-		初始化语言设置()
+	return 切换语言(读取设置())
 
 
 func 根据系统语言切换语言():
-	var locale = OS.get_locale()
+	var locale := OS.get_locale()
 	if locale == "zh_CN":
-		return 切换语言(1)
+		切换语言(1)
 	elif locale == "zh_TW":
-		return 切换语言(2)
+		切换语言(2)
 	elif locale == "en":
-		return 切换语言(3)
+		切换语言(3)
 	elif locale == "jp":
-		return 切换语言(4)
+		切换语言(4)
 	elif locale == "es":
-		return 切换语言(5)
+		切换语言(5)
 	else:
-		return 切换语言(3)
+		切换语言(3)
+	return 0
 
 
 func 初始化语言设置():
-	切换并保存(0)
+	return 切换并保存(0)
+
+
+#func 根据语言切换主题(index):
+	#if index == 1 or index == 3 or index == 5:
+		#应该使用字体 = true
+		##propagate_call(“update”)
+	#else:
+		#应该使用字体 = false
 
 
 func 改变初始窗口大小():
-	pass
+	var sys_name := OS.get_name()
+	if sys_name != "Android" and sys_name != "iOS" and sys_name != "Web":
+		get_viewport().size = Vector2(DisplayServer.screen_get_dpi() * 3.5, DisplayServer.screen_get_dpi() * 6.2)

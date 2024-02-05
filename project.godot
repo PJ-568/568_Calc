@@ -26,7 +26,7 @@ Global="*res://Scripts/全局.gd"
 [display]
 
 window/size/viewport_width=720
-window/size/viewport_height=1221
+window/size/viewport_height=1220
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
@@ -156,7 +156,7 @@ window/handheld/orientation=1
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://Assets/国际化.en.translation", "res://Assets/国际化.es.translation", "res://Assets/国际化.jp.translation", "res://Assets/国际化.ko.translation", "res://Assets/国际化.zh.translation", "res://Assets/国际化.zht.translation")
+locale/translations=PackedStringArray("res://Assets/Lang/国际化.cht.translation", "res://Assets/Lang/国际化.en.translation", "res://Assets/Lang/国际化.es.translation", "res://Assets/Lang/国际化.jp.translation", "res://Assets/Lang/国际化.ko.translation", "res://Assets/Lang/国际化.zh.translation", "res://Assets/Lang/国际化.zht.translation")
 
 [rendering]
 
