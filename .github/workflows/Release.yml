@@ -14,7 +14,7 @@ jobs:
       env:
         GIT_NAME: PJ-568
         GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
-        REPO: github.com/PJ-568/568_Clac_keystore
+        REPO: github.com/PJ-568/568_Calc_keystore
         GH_TOKEN: ${{ secrets.TOKEN }}
       run: |
           git config --global user.name $GIT_NAME
@@ -22,7 +22,7 @@ jobs:
           echo '创建 tmp/：'
           mkdir /home/runner/tmp
           echo '克隆 keystore：'
-          git clone https://$GH_TOKEN@$REPO -b key /home/runner/tmp/key
+          git clone https://$GH_TOKEN@$REPO /home/runner/tmp/key
 
     - name: checkout
       uses: actions/checkout@v3.3.0
