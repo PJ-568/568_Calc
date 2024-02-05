@@ -11,7 +11,7 @@ func _unhandled_input(event) -> void:
 
 
 func _ready():
-	语言.selected = Global.读取设置()
+	语言.selected = Global.读取设置并更改语言()
 
 
 func _on_返回_pressed():
