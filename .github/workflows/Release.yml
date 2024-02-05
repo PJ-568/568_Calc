@@ -15,14 +15,14 @@ jobs:
         GIT_NAME: PJ-568
         GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
         REPO: github.com/PJ-568/568_Clac_keystore
-        GH_TOKEN: ${{ secrets.P_TOKEN }}
+        GH_TOKEN: ${{ secrets.TOKEN }}
       run: |
           git config --global user.name $GIT_NAME
           git config --global user.email $GIT_EMAIL
           echo '创建 tmp/：'
           mkdir /home/runner/tmp
           echo '克隆 keystore：'
-          git clone "https://$P_TOKEN@$REPO" -b key /home/runner/tmp/key
+          git clone "https://$TOKEN@$REPO" -b key /home/runner/tmp/key
 
     - name: checkout
       uses: actions/checkout@v3.3.0
