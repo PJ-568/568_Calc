@@ -22,7 +22,7 @@ jobs:
           echo '创建 tmp/：'
           mkdir /home/runner/tmp
           echo '克隆 keystore：'
-          git clone https://$TOKEN@$REPO -b key /home/runner/tmp/key
+          git clone https://$GH_TOKEN@$REPO -b key /home/runner/tmp/key
 
     - name: checkout
       uses: actions/checkout@v3.3.0
