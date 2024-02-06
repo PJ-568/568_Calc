@@ -76,6 +76,14 @@ jobs:
           echo '复制 /home/runner/temp/404.html 到 ./404.html：'
           cp -v -u -r /home/runner/temp/404.html ./404.html
 
+      - name: 获取发行版
+        run: |
+          mkdir ./Web
+          /usr/bin/wget -nv https://gitee.com/PJ-568/568_Calc/releases/download/v0.0.0.3/Web.zip -O ./Web.zip
+          unzip -o ./Web.zip -d ./Web
+          ls ./Web
+          rm ./Web.zip
+
       - name: Generate the sitemap
         id: sitemap
         uses: cicirello/generate-sitemap@v1
