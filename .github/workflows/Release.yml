@@ -49,6 +49,7 @@ jobs:
         godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.2.1/Godot_v4.2.1-stable_linux.x86_64.zip
         godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.2.1/Godot_v4.2.1-stable_export_templates.tpz
         relative_project_path: ./
+        relative_export_path: ./Release/
         archive_output: true
         wine_path: ${{ steps.wine_install.outputs.WINE_PATH }}
 
@@ -58,4 +59,5 @@ jobs:
         token: ${{ secrets.TOKEN }}
         generateReleaseNotes: true
         tag: ${{ github.ref_name }}
-        artifacts: "Release/Android/*.apk,Release/Linux/*,Release/Web/*,Release/Windows/*"
+        # artifacts: "Release/Android/*.apk,Release/Linux/*,Release/Web/*,Release/Windows/*"
+        artifacts: ./Release/*
