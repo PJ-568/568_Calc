@@ -10,7 +10,16 @@ jobs:
     permissions: write-all
     name: Export Software
     steps:
-    - name: Get key
+    - name: Install wine
+      id: wine_install
+      run: |
+        sudo apt install wine64
+        echo "WINE_PATH=$(which wine64)" >> $GITHUB_OUTPUT
+
+    - name: Checkout
+      uses: actions/checkout@v3.3.0
+
+    - name: Get keystore
       env:
         GIT_NAME: PJ-568
         GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
@@ -19,20 +28,8 @@ jobs:
       run: |
           git config --global user.name $GIT_NAME
           git config --global user.email $GIT_EMAIL
-          echo '创建 tmp/：'
-          mkdir /home/runner/tmp
           echo '克隆 keystore：'
-          git clone https://$GH_TOKEN@$REPO /home/runner/tmp/key
-
-    - name: checkout
-      uses: actions/checkout@v3.3.0
-
-    - name: Move key
-      run: |
-          echo '创建 key/：'
-          mkdir ./key
-          echo '复制 keystore：'
-          cp -u -r /home/runner/tmp/key/* ./key/
+          git clone https://$GH_TOKEN@$REPO ./key
 
     - name: Set up JDK 17
       uses: actions/setup-java@v3
@@ -42,12 +39,6 @@ jobs:
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
-
-    - name: install wine
-      id: wine_install
-      run: |
-        sudo apt install wine64
-        echo "WINE_PATH=$(which wine64)" >> $GITHUB_OUTPUT
 
     - name: export software
       id: export
@@ -61,7 +52,7 @@ jobs:
         archive_output: true
         wine_path: ${{ steps.wine_install.outputs.WINE_PATH }}
 
-    - name: create release
+    - name: Create release
       uses: ncipollo/release-action@v1
       with:
         token: ${{ secrets.TOKEN }}
