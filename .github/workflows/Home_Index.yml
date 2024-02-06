@@ -79,7 +79,7 @@ jobs:
       - name: 获取发行版
         run: |
           mkdir ./Web
-          /usr/bin/wget -nv https://gitee.com/PJ-568/568_Calc/releases/download/v0.0.0.3/Web.zip -O ./Web.zip
+          /usr/bin/wget https://gitee.com/PJ-568/568_Calc/releases/download/v0.0.0.3/Web.zip -O ./Web.zip
           unzip -o ./Web.zip -d ./Web
           ls ./Web
           rm ./Web.zip
