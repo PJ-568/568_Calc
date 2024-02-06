@@ -59,5 +59,4 @@ jobs:
         token: ${{ secrets.TOKEN }}
         generateReleaseNotes: true
         tag: ${{ github.ref_name }}
-        # artifacts: "Release/Android/*.apk,Release/Linux/*,Release/Web/*,Release/Windows/*"
-        artifacts: ./Release/*
+        artifacts: ${{ steps.export.outputs.archive_directory }}/*
