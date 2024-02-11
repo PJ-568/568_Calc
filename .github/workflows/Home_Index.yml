@@ -7,7 +7,7 @@ on:
       - '!gh-pages'
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write  # To push a branch 
@@ -19,13 +19,19 @@ jobs:
           ref: home
           submodules: recursive
 
-      - name: 获取发行版
+      - name: Get Release
+        uses: robinraju/release-downloader@v1.9
+        with:
+          repository: "PJ-568/568_Calc"
+          latest: true
+          fileName: "Web.zip"
+
+      - name: Release
         run: |
           mkdir ./Web
-          /usr/bin/wget https://gitee.com/PJ-568/568_Calc/releases/download/v0.0.0.3/Web.zip -O ./Web.zip
-          unzip -o ./Web.zip -d ./Web
+          unzip -o $GITHUB_WORKSPACE/Web.zip -d ./Web
           ls ./Web
-          rm ./Web.zip
+          rm $GITHUB_WORKSPACE/Web.zip
 
       - name: Generate the sitemap
         id: sitemap
@@ -39,8 +45,8 @@ jobs:
           echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
           echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
 
-      # Deploy
-      - uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: . # The folder the action should deploy.
