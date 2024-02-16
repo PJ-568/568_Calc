@@ -88,6 +88,8 @@ func 初始化语言设置():
 
 
 func 改变初始窗口大小():
+	# 获取系统类型
 	var sys_name := OS.get_name()
-	if sys_name != "Android" and sys_name != "iOS" and sys_name != "Web":
+	# 根据系统类型判断是否调整窗口DPI
+	if sys_name == "Windows" or sys_name == "macOS" or sys_name == "Linux" or sys_name == "BSD":
 		get_viewport().size = Vector2(DisplayServer.screen_get_dpi() * 3.5, DisplayServer.screen_get_dpi() * 6.2)

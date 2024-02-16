@@ -27,6 +27,7 @@ Global="*res://Scripts/全局.gd"
 
 window/size/viewport_width=720
 window/size/viewport_height=1220
+window/size/initial_position_type=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
