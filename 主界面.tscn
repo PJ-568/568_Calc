@@ -42,12 +42,14 @@ color = Color(0.129412, 0.129412, 0.129412, 1)
 
 [node name="屏键容器" type="VBoxContainer" parent="面板/背景色"]
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -723.0
 offset_top = -1226.0
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 0
 
 [node name="结果显示容器" type="VBoxContainer" parent="面板/背景色/屏键容器"]
@@ -260,7 +262,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="0" type="Button" parent="面板/背景色/屏键容器/MarginContainer2/上下键盘分隔/下键盘"]
-custom_minimum_size = Vector2(355, 175)
+custom_minimum_size = Vector2(354, 175)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 5
@@ -290,17 +292,21 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_2bxdx")
 text = "="
 
 [node name="MarginContainer" type="MarginContainer" parent="面板/背景色"]
-layout_mode = 2
-offset_left = -1.5
-offset_top = -5.0
-offset_right = 721.5
-offset_bottom = 91.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -723.0
+offset_bottom = 96.0
+grow_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 
 [node name="顶按钮容器" type="HBoxContainer" parent="面板/背景色/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
 alignment = 2
 
 [node name="关于" type="Button" parent="面板/背景色/MarginContainer/顶按钮容器"]
