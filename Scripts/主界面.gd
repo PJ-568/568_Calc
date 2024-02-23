@@ -19,6 +19,7 @@ func _ready():
 		for btn in Buttons.get_children():
 			if btn.name.is_valid_int():
 				btn.pressed.connect(Callable(self, "_number_buttons").bind(btn))
+	print(历史.text, 第一个数字, 第二个数字)
 
 
 @warning_ignore("unused_parameter")
@@ -91,6 +92,9 @@ func _on_clear_pressed():
 	已键入第二数 = false
 	历史.text = ""
 	工作区.text = "0"
+	第一个数字 = 0
+	第二个数字 = 0
+	运算符 = ""
 	小数否 = false
 
 
@@ -191,7 +195,9 @@ func 等于():
 			结果 = 第一个数字 * 第二个数字
 		"/":
 			结果 = 第一个数字 / 第二个数字
-	历史.text = str(第一个数字) + 运算符 + str(第二个数字) + "="
+		"":
+			结果 = 第二个数字
+	历史.text = 删余零(str(第一个数字) + 运算符 + str(第二个数字) + "=")
 	工作区.text = str(snappedf(结果, 0.0000001))
 	已键入第二数 = false
 	已键入运算符 = false
@@ -203,3 +209,11 @@ func _on_关于_pressed():
 
 func _on_设置_pressed():
 	get_tree().change_scene_to_file("res://设置.tscn")
+
+
+func 删余零(str:String):
+	if str:
+		if str[0] == "0":
+			if str[1] == "0" or (str[1] != "." and str[1] != "="):
+				return 删余零(str.substr(1))
+	return str
