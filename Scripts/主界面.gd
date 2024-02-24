@@ -211,7 +211,7 @@ func _on_设置_pressed():
 	get_tree().change_scene_to_file("res://设置.tscn")
 
 
-func 删余零(str:String):
+func 删余零(str:String) -> String:
 	if str:
 		if str[0] == "0":
 			if str[1] == "0" or (str[1] != "." and str[1] != "="):

@@ -161,7 +161,7 @@ uri = "https://github.com/atelier-anchor/smiley-sans"
 [node name="版本" type="Label" parent="面板/背景色/MarginContainer/色/内容按钮分隔"]
 layout_mode = 2
 theme = ExtResource("2_ssjte")
-text = "v0.0.0.3"
+text = "v0.0.0.4"
 horizontal_alignment = 1
 
 [node name="返回" type="Button" parent="面板/背景色/MarginContainer/色/内容按钮分隔"]
