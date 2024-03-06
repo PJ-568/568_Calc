@@ -99,25 +99,19 @@ func _on_clear_pressed():
 
 
 func 按下正负():
-	var 结果 : float
-	第一个数字 = 工作区.text.to_float()
-	结果 = - 第一个数字
-	if not 已被使用:
-		历史.text = "-" + str(第一个数字)
-	else:
-		历史.text = str(第一个数字)
-	工作区.text = str(结果)
-	已被使用 = true
+	if str(工作区.text.to_float()) != "0":
+		工作区.text = str(- 工作区.text.to_float())
+		已被使用 = true
 
 
 func 按下退格():
 	if 已被使用:
 		if 工作区.text.length() >= 2:
 			工作区.text = 工作区.text.left(-1)
-		else:
-			工作区.text = "0"
-			已被使用 = false
-			已键入第二数 = false
+			return
+	工作区.text = "0"
+	已被使用 = false
+	已键入第二数 = false
 
 
 func 按下除():
@@ -182,7 +176,7 @@ func 按下点():
 func 等于():
 	已被使用 = false
 	var 结果 : float
-	if 历史.text.right(1) == "=" or 运算符 == "":
+	if 历史.text.right(1) == "=" and 运算符 != "":
 		第一个数字 = 工作区.text.to_float()
 	else:
 		第二个数字 = 工作区.text.to_float()
@@ -201,6 +195,7 @@ func 等于():
 	工作区.text = str(snappedf(结果, 0.0000001))
 	已键入第二数 = false
 	已键入运算符 = false
+	小数否 = false
 
 
 func _on_关于_pressed():
@@ -211,9 +206,9 @@ func _on_设置_pressed():
 	get_tree().change_scene_to_file("res://设置.tscn")
 
 
-func 删余零(str:String) -> String:
-	if str:
-		if str[0] == "0":
-			if str[1] == "0" or (str[1] != "." and str[1] != "="):
-				return 删余零(str.substr(1))
-	return str
+func 删余零(str1:String) -> String:
+	if str1:
+		if str1[0] == "0":
+			if str1[1] == "0" or (str1[1] != "." and str1[1] != "=" and str1[1] != "+" and str1[1] != "-" and str1[1] != "*" and str1[1] != "/"):
+				return 删余零(str1.substr(1))
+	return str1
