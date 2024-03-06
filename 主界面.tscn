@@ -42,13 +42,15 @@ color = Color(0.129412, 0.129412, 0.129412, 1)
 
 [node name="屏键容器" type="VBoxContainer" parent="面板/背景色"]
 layout_mode = 1
-anchors_preset = 11
+anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -722.0
+offset_top = -1219.0
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="结果显示容器" type="VBoxContainer" parent="面板/背景色/屏键容器"]
 layout_mode = 2
