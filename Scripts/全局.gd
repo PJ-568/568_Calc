@@ -7,7 +7,6 @@ const CONFIG_PATH := "user://settings.cfg"
 
 
 func _ready():
-	#根据语言切换主题(读取设置并更改语言())
 	读取设置并更改语言()
 	改变初始窗口大小()
 

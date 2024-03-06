@@ -42,15 +42,13 @@ color = Color(0.129412, 0.129412, 0.129412, 1)
 
 [node name="屏键容器" type="VBoxContainer" parent="面板/背景色"]
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 11
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -723.0
-offset_top = -1226.0
+offset_left = -722.0
 grow_horizontal = 0
-grow_vertical = 0
+grow_vertical = 2
 
 [node name="结果显示容器" type="VBoxContainer" parent="面板/背景色/屏键容器"]
 layout_mode = 2
@@ -88,7 +86,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="上下键盘分隔" type="VBoxContainer" parent="面板/背景色/屏键容器/MarginContainer2"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 size_flags_vertical = 4
 
 [node name="上键盘" type="GridContainer" parent="面板/背景色/屏键容器/MarginContainer2/上下键盘分隔"]
