@@ -182,7 +182,7 @@ func 按下点():
 func 等于():
 	已被使用 = false
 	var 结果 : float
-	if 历史.text.right(1) == "=":
+	if 历史.text.right(1) == "=" or 运算符 == "":
 		第一个数字 = 工作区.text.to_float()
 	else:
 		第二个数字 = 工作区.text.to_float()
