@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://g4du8c33vab5"]
+[gd_scene load_steps=10 format=3 uid="uid://g4du8c33vab5"]
 
 [ext_resource type="Theme" uid="uid://dgo8n2bba7imi" path="res://Assets/样式/得意黑字体.tres" id="1_3h7g3"]
 [ext_resource type="Script" path="res://Scripts/主界面.gd" id="1_y82yl"]
@@ -10,6 +10,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2bxdx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yp77b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gc2k"]
 
 [node name="主界面" type="Control"]
 layout_mode = 3
@@ -327,6 +329,23 @@ icon = ExtResource("3_o66lt")
 icon_alignment = 1
 expand_icon = true
 
+[node name="MarginContainer2" type="MarginContainer" parent="面板/背景色"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+
+[node name="关闭" type="Button" parent="面板/背景色/MarginContainer2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("2_asaep")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0gc2k")
+text = "X"
+
 [connection signal="pressed" from="面板/背景色/屏键容器/MarginContainer2/上下键盘分隔/上键盘/Clear" to="." method="_on_clear_pressed"]
 [connection signal="pressed" from="面板/背景色/屏键容器/MarginContainer2/上下键盘分隔/上键盘/Or" to="." method="按下正负"]
 [connection signal="pressed" from="面板/背景色/屏键容器/MarginContainer2/上下键盘分隔/上键盘/Back" to="." method="按下退格"]
@@ -338,3 +357,4 @@ expand_icon = true
 [connection signal="pressed" from="面板/背景色/屏键容器/MarginContainer2/上下键盘分隔/下键盘/=" to="." method="等于"]
 [connection signal="pressed" from="面板/背景色/MarginContainer/顶按钮容器/关于" to="." method="_on_关于_pressed"]
 [connection signal="pressed" from="面板/背景色/MarginContainer/顶按钮容器/设置" to="." method="_on_设置_pressed"]
+[connection signal="pressed" from="面板/背景色/MarginContainer2/关闭" to="." method="当关闭按钮按下"]
