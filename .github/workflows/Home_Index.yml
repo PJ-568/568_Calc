@@ -30,14 +30,14 @@ jobs:
         run: |
           mkdir ./Web
           unzip -o $GITHUB_WORKSPACE/Web.zip -d ./Web
-          ls ./Web
+          ls -R ./Web
           rm $GITHUB_WORKSPACE/Web.zip
 
       - name: Generate the sitemap
         id: sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          base-url-path: https://Calc.pj568.eu.org/
+          base-url-path: https://Calc.pj568.sbs/
 
       - name: Output sitemap stats
         run: |
@@ -52,4 +52,4 @@ jobs:
           folder: . # The folder the action should deploy.
 
       - name: Ping Google
-        run: curl https://www.google.com/ping?sitemap=https://Calc.pj568.eu.org/sitemap.xml
+        run: curl https://www.google.com/ping?sitemap=https://Calc.pj568.sbs/sitemap.xml
