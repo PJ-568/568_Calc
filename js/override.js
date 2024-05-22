@@ -66,11 +66,10 @@
             script.type = "text/javascript";
             script.src = "https://giscus.app/client.js";
 
-
-            script.setAttribute("data-repo", "Hamud-Lang/Hamud_Book");
-            script.setAttribute("data-repo-id", "R_kgDOKAX-uw");
+            script.setAttribute("data-repo", "PJ-568/568_Calc");
+            script.setAttribute("data-repo-id", "R_kgDOKgTh_A");
             script.setAttribute("data-category", "Announcements");
-            script.setAttribute("data-category-id", "DIC_kwDOKAX-u84CYRSk");
+            script.setAttribute("data-category-id", "DIC_kwDOKgTh_M4CaKUO");
 
             script.setAttribute("data-mapping", "title");
             script.setAttribute("data-strict", "1");
