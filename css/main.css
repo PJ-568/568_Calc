@@ -2,3 +2,62 @@ html {
 	color: #DDD;
 	background-color: #111;
 }
+
+#translate>.translateSelectLanguage {
+	cursor: pointer;
+	position: absolute;
+	padding: 0.3rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	color: #DDD;
+	background-color: #795548;
+	border: 2px solid #8D6E63;
+}
+
+@media screen and (max-width: 980px) {
+	#translate>.translateSelectLanguage {
+		left: 1rem;
+		top: 1rem;
+		font-size: .8rem;
+		width: 6rem
+	}
+}
+
+@media screen and (min-width: 980px) {
+	#translate>.translateSelectLanguage {
+		left: 2rem;
+		top: 2rem;
+		font-size: 1rem
+	}
+}
+
+/* 加载进度条 */
+.loading-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+	opacity: 0;
+	transition: opacity .4s linear;
+
+	.progress {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 4px;
+		background-color: #007bff;
+		box-shadow: 0 0 10px rgba(119, 182, 255, .7);
+	}
+
+	&.loading {
+		opacity: 1;
+		transition: none;
+
+		.progress {
+			transition: width .4s ease;
+		}
+	}
+}
+
+/* 加载进度条结束 */
