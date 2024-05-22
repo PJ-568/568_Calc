@@ -77,7 +77,7 @@
             script.setAttribute("data-reactions-enabled", "1");
             script.setAttribute("data-emit-metadata", "0");
             script.setAttribute("data-input-position", "top");
-            script.setAttribute("data-theme", 'transparent_dark');
+            script.setAttribute("data-theme", "transparent_dark");
             script.setAttribute("data-lang", giscus_lang);
 
             script.crossOrigin = "anonymous";
